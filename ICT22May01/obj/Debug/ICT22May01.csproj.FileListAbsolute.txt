@@ -1,0 +1,12 @@
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\ICT22May01.exe
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\ICT22May01.pdb
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\nunit.framework.dll
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\WebDriver.dll
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\WebDriver.Support.dll
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\nunit.framework.pdb
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\nunit.framework.xml
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\WebDriver.xml
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\bin\Debug\WebDriver.Support.xml
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\obj\Debug\ICT22May01.csprojResolveAssemblyReference.cache
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\obj\Debug\ICT22May01.exe
+C:\Users\hzha321\RiderProject\ICT22May01\ICT22May01\obj\Debug\ICT22May01.pdb
