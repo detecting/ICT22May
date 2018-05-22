@@ -115,10 +115,7 @@ namespace ICT22May01
                 int pageNow = int.Parse(arrPage[arrPage.Length - 1]) - i + 1;
                 Thread.Sleep(1000);
 
-                //go to the last page
-                IWebElement pageElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[2]"));
-                pageElement.Click();
-                Thread.Sleep(1000);
+
 
                 //get the table and tr location 
                 var trs
@@ -141,6 +138,9 @@ namespace ICT22May01
                         }
                     }
                 }
+                //go to the previous page
+                IWebElement pageElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[2]"));
+                pageElement.Click();
             }
 
             //closr the browser
