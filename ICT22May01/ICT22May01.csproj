@@ -52,10 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateNew.cs" />
+    <Compile Include="HomePage.cs" />
     <Compile Include="Initial.cs" />
+    <Compile Include="LoginPage.cs" />
     <Compile Include="NewDirectory1\Class1.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

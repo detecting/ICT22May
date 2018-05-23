@@ -1,16 +1,22 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace ICT22May01
 {
     public class Initial
     {
-        public void InitialBrowser(string url)
+        private IWebDriver driver;
+        private string url = "http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f";
+
+        public Initial(IWebDriver _driver)
         {
-            PropertiesCollection.driver = new ChromeDriver();
-            //open the url   
-            PropertiesCollection.driver.Navigate().GoToUrl(url);
-            //max the windows
-            PropertiesCollection.driver.Manage().Window.Maximize();
+            driver = _driver;
+        }
+
+        public void GoToUrlAndMaxWindow()
+        {
+            driver.Navigate().GoToUrl(url);
+            driver.Manage().Window.Maximize();
         }
     }
 }
