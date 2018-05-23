@@ -22,6 +22,7 @@ namespace ICT22May01
             string tabOfWindow = "Dashboard - Dispatching System";
             string inputCode = "Morgan123";
             string inputDes = "MorganHello";
+            string timeString = "Time";
 
             //initial
             IWebDriver driver = new ChromeDriver();
@@ -51,10 +52,8 @@ namespace ICT22May01
             //waiting for thr page!
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-
             //Create a new Time and Material item
             // Click Adminstration>>Click Time and Materials>>Click Create New >> Create a valid data >> Validate the item is created.
-
             IWebElement LinkAdminstration = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a"));
             LinkAdminstration.Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -64,23 +63,28 @@ namespace ICT22May01
             IWebElement BtnCreateNew = driver.FindElement(By.XPath("//*[@id=\"container\"]/p/a"));
             BtnCreateNew.Click();
 
-
             //select Time from DDL
             //click Material
             driver.FindElement(By.XPath("//*[@id=\"TimeMaterialEditForm\"]/div/div[1]/div/span[1]/span/span[1]"))
                 .Click();
             //wait and select Time
             Thread.Sleep(1000);
-            driver.FindElement(By.XPath("//*[@id=\"TypeCode_listbox\"]/li[2]")).Click();
+            for (int i = 1; i <= 2; i++)
+            {
+                IWebElement webElement = driver.FindElement(By.XPath("//*[@id=\"TypeCode_listbox\"]/li[" + i + "]"));
+                if (webElement.Text == timeString)
+                {
+                    webElement.Click();
+                }
+            }
 
-
+//            driver.FindElement(By.XPath("//*[@id=\"TypeCode_listbox\"]/li[2]")).Click();
 /*
             new WebDriverWait(driver, TimeSpan.FromSeconds(3))
                 .Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(
                     By.XPath("//*[@id=\"TypeCode_listbox\"]/li[2]")));
             driver.FindElement(By.XPath("//*[@id=\"TypeCode_listbox\"]/li[2]")).Click();
 */
-
 
             // fill the infor form:
             //input code
@@ -96,8 +100,7 @@ namespace ICT22May01
 
             //go to the last page and click 
             driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]")).Click();
-            Thread.Sleep(1000);
-
+            Thread.Sleep(3000);
 
             /*Console.WriteLine(webElement.GetAttribute("data-page"));*/
             //get the maxmun value of the page:
@@ -113,11 +116,6 @@ namespace ICT22May01
             {
                 //the current page number
                 int pageNow = int.Parse(arrPage[arrPage.Length - 1]) - i + 1;
-                Thread.Sleep(1000);
-
-                //go to the last page
-                IWebElement pageElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[2]"));
-                pageElement.Click();
                 Thread.Sleep(1000);
 
                 //get the table and tr location 
@@ -141,6 +139,10 @@ namespace ICT22May01
                         }
                     }
                 }
+
+                //go to the previous page
+                IWebElement pageElement = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[2]"));
+                pageElement.Click();
             }
 
             //closr the browser
