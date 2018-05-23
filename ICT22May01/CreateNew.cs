@@ -67,7 +67,7 @@ namespace ICT22May01
         {
             //go to the last page and click 
             driver.FindElement(By.XPath(lastPageXpath)).Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(2500);
 
             //get the maxmun value of the page:
             //get the text of ul
